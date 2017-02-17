@@ -108,7 +108,7 @@ module.exports.path = function(src, opts) {
 module.exports.cmd = function(image, output) {
   var cmd = [
     sprintf(
-      'convert %s -auto-orient -strip -write mpr:%s +delete', image.path, image.path
+      'convert -limit memory 1 -limit map 1 %s -auto-orient -strip -write mpr:%s +delete', image.path, image.path
     )
   ];
 
